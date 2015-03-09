@@ -21,6 +21,36 @@ body {
   transform: translate(-50%, -50%);
 }
 
+@keyframes show-title {
+  0% {
+    transform: translateY(0.25em);
+    opacity: 0;
+  }
+  10%, 95% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0.25em);
+    opacity: 0;
+  }
+}
+
+@keyframes show-dials {
+  0%, 8% {
+    opacity: 0;
+    transform: translateY(0.25em);
+  }
+  15%, 93% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0.25em);
+  }
+}
+
 .screen {
   width: 59.2%;
   height: 74%;
@@ -29,6 +59,7 @@ body {
   top: 13%;
 
   .title, .time {
+    animation: show-title 5s infinite ease-out;
     color: #fff;
     font-size: 0.75em;
     position: absolute;
@@ -38,26 +69,29 @@ body {
   }
 
   .time {
+    animation-delay: 0.1s;
     color: #aaa;
     right: 0;
     left: auto;
   }
 
   .dials {
+    animation: show-dials 5s infinite ease-out;
     width: 7.5em;
     height: 7.5em;
     border-radius: 50%;
     position: absolute;
+    overflow: hidden;
     top: 1.375em;
     left: 0;
   }
 
-  .dial {
-    overflow: hidden;
-  }
-
   /**** DIAL 1 ****/
   .dial.move {
+    position: absolute;
+    width: 7.5em;
+    height: 7.5em;
+
     &::after {
       content: "";
       background: #000;
@@ -77,38 +111,38 @@ body {
       left: 0;
     }
     .wedge {
-      animation: rotate-bg-dial-1-1 3s 0.4s linear forwards;
+      animation: rotate-bg-dial-1-1 5s 0.2s linear infinite;
       border-radius: 50%;
       width: 100%;
       height: 100%;
     }
     .container1 {
-      clip: rect(0px, 7.5em, 7.5em, 3.725em);
+      clip: rect(0px, 7.5em, 7.5em, 3.75em);
 
       .wedge {
         background: linear-gradient(left, #f8202b, #f8202b 50%, transparent 50%, transparent);
       }
     }
     .container2 {
-      clip: rect(0px, 3.725em, 7.5em, 0);
+      clip: rect(0px, 3.75em, 7.5em, 0);
 
       .wedge {
-        animation: rotate-bg-dial-1-2 3s 0.4s linear forwards;
+        animation: rotate-bg-dial-1-2 5s 0.2s linear infinite;
         background: linear-gradient(left, transparent, transparent 50%, #f8202b 50%, #f8202b);
       }
     }
 
     .marker {
-      width: 0.92em;
-      height: 0.92em;
+      width: 0.93em;
+      height: 0.93em;
       background: #f8202b;
       border-radius: 50%;
       position: absolute;
       top: 0;
-      left: calc(50% - 0.5em);
+      left: 3.285em;
     }
     .end {
-      animation: rotate-marker-dial-1 1.85s 0.4s linear forwards;
+      animation: rotate-marker-dial-1 5s 0.2s linear infinite;
       transform-origin: 50% 3.75em;
     }
   }
@@ -145,10 +179,10 @@ body {
       height: 100%;
     }
     .container1 {
-      clip: rect(0px, 5.5em, 5.5em, 2.75em);
+      clip: rect(0px, 5.75em, 5.5em, 2.8em);
 
       .wedge {
-        animation: rotate-bg-dial-2-1 2s .5s linear forwards;
+        animation: rotate-bg-dial-2-1 5s .5s linear infinite;
         background: linear-gradient(left, #9cfb46, #9cfb46 50%, transparent 50%, transparent);
       }
     }
@@ -157,16 +191,16 @@ body {
     }
 
     .marker {
-      width: 0.94em;
-      height: 0.94em;
+      width: 0.93em;
+      height: 0.93em;
       background: #9cfb46;
       border-radius: 50%;
       position: absolute;
       top: 0;
-      left: calc(50% - 0.5em);
+      left: calc(50% - 0.4em);
     }
     .end {
-      animation: rotate-marker-dial-2 2s .5s linear forwards;
+      animation: rotate-marker-dial-2 5s .5s linear infinite;
       transform-origin: 50% 2.75em;
     }
   }
@@ -186,8 +220,8 @@ body {
       width: 1.75em;
       height: 1.75em;
       position: absolute;
-      top: 0.925em;
-      left: 0.925em;
+      top: 0.875em;
+      left: 0.875em;
     }
 
     .container {
@@ -196,9 +230,9 @@ body {
       right: 0;
       bottom: 0;
       left: 0;
+      overflow: hidden;
     }
     .wedge {
-      animation: rotate-bg-2 3s 1s infinite linear;
       border-radius: 50%;
       width: 100%;
       height: 100%;
@@ -207,7 +241,7 @@ body {
       clip: rect(0px, 3.75em, 3.75em, 1.75em);
 
       .wedge {
-        animation: rotate-bg-dial-3-1 2s 0.5s linear forwards;
+        animation: rotate-bg-dial-3-1 5s 0.5s linear infinite;
         background: linear-gradient(left, #32cbd4, #32cbd4 50%, transparent 50%, transparent);
       }
     }
@@ -216,17 +250,17 @@ body {
     }
 
     .marker {
-      width: 0.94em;
-      height: 0.94em;
+      width: 0.93em;
+      height: 0.93em;
       background: #32cbd4;
       border-radius: 50%;
       position: absolute;
       top: 0;
-      left: calc(50% - 0.5em);
+      left: calc(50% - 0.4em);
     }
     .end {
-      animation: rotate-marker-dial-3 2s 0.5s linear forwards;
-      transform-origin: 50% 1.785em;
+      animation: rotate-marker-dial-3 5s 0.5s linear infinite;
+      transform-origin: 50% 1.7em;
     }
   }
 
@@ -254,10 +288,11 @@ body {
 }
 
 .pips {
+  animation: show-dials 5s 0.1s infinite ease-out;
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: calc(50% - 1em);
+  width: 2em;
 
   div {
     width: 0.25em;
@@ -276,47 +311,74 @@ body {
 /** Animations **/
 
 @keyframes rotate-marker-dial-1 {
-  100% {
+  0%, 6% {
+    transform: none;
+  }
+  28%, 94% {
     transform: rotateZ(220deg);
+  }
+  95%, 100% {
+    transform: none;
   }
 }
 
 @keyframes rotate-bg-dial-1-1 {
-  50%, 100% {
+  0%, 6% {
+    transform: none;
+  }
+  24%, 94% {
     transform: rotateZ(180deg);
+  }
+  95%, 100% {
+    transform: none;
   }
 }
 
 @keyframes rotate-bg-dial-1-2 {
-  50% {
+  24% {
     transform: none;
   }
-  61.111%, 100% {
+  28%, 94% {
     transform: rotateZ(40deg);
+  }
+  95%, 100% {
+    transform: none;
   }
 }
 
 @keyframes rotate-marker-dial-2 {
-  50%, 100% {
+  20%, 90% {
     transform: rotateZ(160deg);
+  }
+  91%, 100% {
+    transform: none;
   }
 }
 
 @keyframes rotate-bg-dial-2-1 {
-  50%, 100% {
+  20%, 90% {
     transform: rotateZ(160deg);
+  }
+  91%, 100% {
+    transform: none;
   }
 }
 
 @keyframes rotate-marker-dial-3 {
-  50%, 100% {
+  20%, 90% {
     transform: rotateZ(90deg);
+  }
+  91%, 100% {
+    transform: none;
   }
 }
 
 @keyframes rotate-bg-dial-3-1 {
-  50%, 100% {
+  20%, 90% {
     transform: rotateZ(90deg);
+  }
+  91%, 100% {
+    transform: none;
   }
 }
 
