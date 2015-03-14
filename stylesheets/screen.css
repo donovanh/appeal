@@ -1,748 +1,148 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+/* fontawesome */
+[class*="entypo-"]:before {
+  font-family: 'Entypo', sans-serif;
+}
+
 body {
   margin: 0;
-  background: #f2f2f2;
-  font-family: "San Francisco Display UltraLight", "Open Sans", Helvetica, Arial, Serif;
-  font-weight: UltraLight;
+  background: #ffe;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
   color: #333;
   text-align: center;
 }
 
-.watch {
-  background: url(../images/watchbg.jpg);
-  background-size: 100%;
-  width: 195px;
-  width: 390px;
-  height: 216px;
-  height: 432px;
-  font-size: 32px;
+button {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  -webkit-transition: all 0.2s 0.75s ease-out;
+          transition: all 0.2s 0.75s ease-out;
+  font-size: 18px;
+  background: #fff;
+  border: 0.5em solid #fff;
+  border-radius: 4em;
+  color: #20b37a;
+  line-height: 1.5;
+  padding: 1em 1em 1em 4em;
 }
-
-@-webkit-keyframes show-title {
-  0% {
-    -webkit-transform: translateY(0.25em);
-            transform: translateY(0.25em);
-    opacity: 0;
-  }
-  10%, 95% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(0.25em);
-            transform: translateY(0.25em);
-    opacity: 0;
-  }
+button.show {
+  opacity: 0;
+  -webkit-transform: translateY(0.5em);
+      -ms-transform: translateY(0.5em);
+          transform: translateY(0.5em);
+  -webkit-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out;
 }
-
-@keyframes show-title {
-  0% {
-    -webkit-transform: translateY(0.25em);
-            transform: translateY(0.25em);
-    opacity: 0;
-  }
-  10%, 95% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: translateY(0.25em);
-            transform: translateY(0.25em);
-    opacity: 0;
-  }
-}
-@-webkit-keyframes show-dials {
-  0%, 8% {
-    opacity: 0;
-    -webkit-transform: translateY(0.25em);
-            transform: translateY(0.25em);
-  }
-  15%, 93% {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(0.25em);
-            transform: translateY(0.25em);
-  }
-}
-@keyframes show-dials {
-  0%, 8% {
-    opacity: 0;
-    -webkit-transform: translateY(0.25em);
-            transform: translateY(0.25em);
-  }
-  15%, 93% {
-    opacity: 1;
-    -webkit-transform: none;
-            transform: none;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(0.25em);
-            transform: translateY(0.25em);
-  }
-}
-.screen {
-  width: 59.2%;
-  height: 74%;
+button img {
   position: absolute;
-  left: 18%;
-  top: 13%;
-  /**** DIAL 1 ****/
-  /**** DIAL 2 ****/
-  /**** DIAL 3 ****/
-}
-.screen .title, .screen .time {
-  -webkit-animation: show-title 5s infinite ease-out;
-          animation: show-title 5s infinite ease-out;
-  color: #fff;
-  font-size: 0.75em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  letter-spacing: 0.1em;
-}
-.screen .time {
-  -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s;
-  color: #aaa;
-  right: 0;
-  left: auto;
-}
-.screen .dials {
-  -webkit-animation: show-dials 5s infinite ease-out;
-          animation: show-dials 5s infinite ease-out;
-  width: 7.5em;
-  height: 7.5em;
-  border-radius: 50%;
-  position: absolute;
-  overflow: hidden;
-  top: 1.375em;
-  left: 0;
-}
-.screen .dial.move {
-  position: absolute;
-  width: 7.5em;
-  height: 7.5em;
-}
-.screen .dial.move::after {
-  content: "";
-  background: #000;
-  border-radius: 50%;
-  width: 5.75em;
-  height: 5.75em;
-  position: absolute;
-  top: 0.9em;
-  left: 0.9em;
-}
-.screen .dial.move .container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.screen .dial.move .wedge {
-  -webkit-animation: rotate-bg-dial-1-1 5s 0.2s linear infinite;
-          animation: rotate-bg-dial-1-1 5s 0.2s linear infinite;
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-}
-.screen .dial.move .container1 {
-  clip: rect(0px, 7.5em, 7.5em, 3.75em);
-}
-.screen .dial.move .container1 .wedge {
-  background: -webkit-gradient(linear, left top, right top, from(#f8202b), color-stop(50%, #f8202b), color-stop(50%, transparent), to(transparent));
-  background: -webkit-linear-gradient(left, #f8202b, #f8202b 50%, transparent 50%, transparent);
-  background: linear-gradient(left, #f8202b, #f8202b 50%, transparent 50%, transparent);
-}
-.screen .dial.move .container2 {
-  clip: rect(0px, 3.75em, 7.5em, 0);
-}
-.screen .dial.move .container2 .wedge {
-  -webkit-animation: rotate-bg-dial-1-2 5s 0.2s linear infinite;
-          animation: rotate-bg-dial-1-2 5s 0.2s linear infinite;
-  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, transparent), color-stop(50%, #f8202b), to(#f8202b));
-  background: -webkit-linear-gradient(left, transparent, transparent 50%, #f8202b 50%, #f8202b);
-  background: linear-gradient(left, transparent, transparent 50%, #f8202b 50%, #f8202b);
-}
-.screen .dial.move .marker {
-  width: 0.93em;
-  height: 0.93em;
-  background: #f8202b;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 3.285em;
-}
-.screen .dial.move .end {
-  -webkit-animation: rotate-marker-dial-1 5s 0.2s linear infinite;
-          animation: rotate-marker-dial-1 5s 0.2s linear infinite;
-  -webkit-transform-origin: 50% 3.75em;
-      -ms-transform-origin: 50% 3.75em;
-          transform-origin: 50% 3.75em;
-}
-.screen .dial.exercise {
-  position: absolute;
-  width: 5.525em;
-  height: 5.525em;
-  top: 1em;
-  left: 1em;
-}
-.screen .dial.exercise::after {
-  content: "";
-  background: #000;
-  border-radius: 50%;
-  width: 3.75em;
-  height: 3.75em;
-  position: absolute;
-  top: 0.925em;
-  left: 0.925em;
-}
-.screen .dial.exercise .container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.screen .dial.exercise .wedge {
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-}
-.screen .dial.exercise .container1 {
-  clip: rect(0px, 5.75em, 5.5em, 2.8em);
-}
-.screen .dial.exercise .container1 .wedge {
-  -webkit-animation: rotate-bg-dial-2-1 5s .5s linear infinite;
-          animation: rotate-bg-dial-2-1 5s .5s linear infinite;
-  background: -webkit-gradient(linear, left top, right top, from(#9cfb46), color-stop(50%, #9cfb46), color-stop(50%, transparent), to(transparent));
-  background: -webkit-linear-gradient(left, #9cfb46, #9cfb46 50%, transparent 50%, transparent);
-  background: linear-gradient(left, #9cfb46, #9cfb46 50%, transparent 50%, transparent);
-}
-.screen .dial.exercise .container2 {
-  display: none;
-}
-.screen .dial.exercise .marker {
-  width: 0.93em;
-  height: 0.93em;
-  background: #9cfb46;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: -webkit-calc(50% - 0.4em);
-  left: calc(50% - 0.4em);
-}
-.screen .dial.exercise .end {
-  -webkit-animation: rotate-marker-dial-2 5s .5s linear infinite;
-          animation: rotate-marker-dial-2 5s .5s linear infinite;
-  -webkit-transform-origin: 50% 2.75em;
-      -ms-transform-origin: 50% 2.75em;
-          transform-origin: 50% 2.75em;
-}
-.screen .dial.stand {
-  position: absolute;
-  width: 3.5em;
-  height: 3.5em;
-  top: 2.05em;
-  left: 2.05em;
-}
-.screen .dial.stand::after {
-  content: "";
-  background: #000;
-  border-radius: 50%;
-  width: 1.75em;
-  height: 1.75em;
-  position: absolute;
-  top: 0.875em;
-  left: 0.875em;
-}
-.screen .dial.stand .container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-}
-.screen .dial.stand .wedge {
-  border-radius: 50%;
-  width: 100%;
-  height: 100%;
-}
-.screen .dial.stand .container1 {
-  clip: rect(0px, 3.75em, 3.75em, 1.75em);
-}
-.screen .dial.stand .container1 .wedge {
-  -webkit-animation: rotate-bg-dial-3-1 5s 0.5s linear infinite;
-          animation: rotate-bg-dial-3-1 5s 0.5s linear infinite;
-  background: -webkit-gradient(linear, left top, right top, from(#32cbd4), color-stop(50%, #32cbd4), color-stop(50%, transparent), to(transparent));
-  background: -webkit-linear-gradient(left, #32cbd4, #32cbd4 50%, transparent 50%, transparent);
-  background: linear-gradient(left, #32cbd4, #32cbd4 50%, transparent 50%, transparent);
-}
-.screen .dial.stand .container2 {
-  display: none;
-}
-.screen .dial.stand .marker {
-  width: 0.93em;
-  height: 0.93em;
-  background: #32cbd4;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: -webkit-calc(50% - 0.4em);
-  left: calc(50% - 0.4em);
-}
-.screen .dial.stand .end {
-  -webkit-animation: rotate-marker-dial-3 5s 0.5s linear infinite;
-          animation: rotate-marker-dial-3 5s 0.5s linear infinite;
-  -webkit-transform-origin: 50% 1.7em;
-      -ms-transform-origin: 50% 1.7em;
-          transform-origin: 50% 1.7em;
-}
-.screen .dial-background {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 50%;
-}
-.screen .dial-background.one {
-  background: #400818;
-}
-.screen .dial-background.two {
-  background: #2d400c;
-}
-.screen .dial-background.three {
-  background: #163d3b;
-}
-
-.pips {
-  -webkit-animation: show-dials 5s 0.1s infinite ease-out;
-          animation: show-dials 5s 0.1s infinite ease-out;
-  position: absolute;
-  bottom: 0;
-  left: -webkit-calc(50% - 1em);
-  left: calc(50% - 1em);
-  width: 2em;
-}
-.pips div {
-  width: 0.25em;
-  height: 0.25em;
-  background-color: #353535;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 0 0.02em;
-}
-.pips div:first-child {
-  background-color: #fff;
-}
-
-/** Animations **/
-@-webkit-keyframes rotate-marker-dial-1 {
-  0%, 6% {
-    -webkit-transform: none;
-            transform: none;
-  }
-  28%, 94% {
-    -webkit-transform: rotateZ(220deg);
-            transform: rotateZ(220deg);
-  }
-  95%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@keyframes rotate-marker-dial-1 {
-  0%, 6% {
-    -webkit-transform: none;
-            transform: none;
-  }
-  28%, 94% {
-    -webkit-transform: rotateZ(220deg);
-            transform: rotateZ(220deg);
-  }
-  95%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@-webkit-keyframes rotate-bg-dial-1-1 {
-  0%, 6% {
-    -webkit-transform: none;
-            transform: none;
-  }
-  24%, 94% {
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-  }
-  95%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@keyframes rotate-bg-dial-1-1 {
-  0%, 6% {
-    -webkit-transform: none;
-            transform: none;
-  }
-  24%, 94% {
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-  }
-  95%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@-webkit-keyframes rotate-bg-dial-1-2 {
-  24% {
-    -webkit-transform: none;
-            transform: none;
-  }
-  28%, 94% {
-    -webkit-transform: rotateZ(40deg);
-            transform: rotateZ(40deg);
-  }
-  95%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@keyframes rotate-bg-dial-1-2 {
-  24% {
-    -webkit-transform: none;
-            transform: none;
-  }
-  28%, 94% {
-    -webkit-transform: rotateZ(40deg);
-            transform: rotateZ(40deg);
-  }
-  95%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@-webkit-keyframes rotate-marker-dial-2 {
-  20%, 90% {
-    -webkit-transform: rotateZ(160deg);
-            transform: rotateZ(160deg);
-  }
-  91%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@keyframes rotate-marker-dial-2 {
-  20%, 90% {
-    -webkit-transform: rotateZ(160deg);
-            transform: rotateZ(160deg);
-  }
-  91%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@-webkit-keyframes rotate-bg-dial-2-1 {
-  20%, 90% {
-    -webkit-transform: rotateZ(160deg);
-            transform: rotateZ(160deg);
-  }
-  91%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@keyframes rotate-bg-dial-2-1 {
-  20%, 90% {
-    -webkit-transform: rotateZ(160deg);
-            transform: rotateZ(160deg);
-  }
-  91%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@-webkit-keyframes rotate-marker-dial-3 {
-  20%, 90% {
-    -webkit-transform: rotateZ(90deg);
-            transform: rotateZ(90deg);
-  }
-  91%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@keyframes rotate-marker-dial-3 {
-  20%, 90% {
-    -webkit-transform: rotateZ(90deg);
-            transform: rotateZ(90deg);
-  }
-  91%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@-webkit-keyframes rotate-bg-dial-3-1 {
-  20%, 90% {
-    -webkit-transform: rotateZ(90deg);
-            transform: rotateZ(90deg);
-  }
-  91%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-@keyframes rotate-bg-dial-3-1 {
-  20%, 90% {
-    -webkit-transform: rotateZ(90deg);
-            transform: rotateZ(90deg);
-  }
-  91%, 100% {
-    -webkit-transform: none;
-            transform: none;
-  }
-}
-.examples {
-  position: relative;
-  font-size: 32px;
-  display: none;
-}
-.examples .example1 {
-  position: absolute;
-  width: 4em;
-  height: 4em;
-  top: 0;
-  clip: rect(0px, 4em, 4em, 2em);
-}
-.examples .example1 .wedge {
-  -webkit-animation: rotate-bg 4s infinite linear;
-          animation: rotate-bg 4s infinite linear;
-  border-radius: 50%;
-  background: -webkit-gradient(linear, left top, right top, from(red), color-stop(50%, red), color-stop(50%, transparent), to(transparent));
-  background: -webkit-linear-gradient(left, red, red 50%, transparent 50%, transparent);
-  background: linear-gradient(left, red, red 50%, transparent 50%, transparent);
-  width: 4em;
-  height: 4em;
-}
-.examples .example2 {
-  position: absolute;
-  width: 4em;
-  height: 4em;
-  top: 0;
-  left: 6em;
-  clip: rect(0px, 2em, 4em, 0);
-}
-.examples .example2 .wedge {
-  -webkit-animation: rotate-bg 4s infinite linear;
-          animation: rotate-bg 4s infinite linear;
-  border-radius: 50%;
-  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, transparent), color-stop(50%, red), to(red));
-  background: -webkit-linear-gradient(left, transparent, transparent 50%, red 50%, red);
-  background: linear-gradient(left, transparent, transparent 50%, red 50%, red);
-  width: 4em;
-  height: 4em;
-}
-.examples .example3, .examples .example4, .examples .example5, .examples .example6 {
-  position: absolute;
-  width: 4em;
-  height: 4em;
-  top: 6em;
-  left: 0;
-}
-.examples .example3 .container, .examples .example4 .container, .examples .example5 .container, .examples .example6 .container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-.examples .example3 .wedge, .examples .example4 .wedge, .examples .example5 .wedge, .examples .example6 .wedge {
-  -webkit-animation: rotate-bg-2 4s infinite linear;
-          animation: rotate-bg-2 4s infinite linear;
-  border-radius: 50%;
-  width: 4em;
-  height: 4em;
-}
-.examples .example3 .container1, .examples .example4 .container1, .examples .example5 .container1, .examples .example6 .container1 {
-  clip: rect(0px, 4em, 4em, 2em);
-}
-.examples .example3 .container1 .wedge, .examples .example4 .container1 .wedge, .examples .example5 .container1 .wedge, .examples .example6 .container1 .wedge {
-  background: -webkit-gradient(linear, left top, right top, from(red), color-stop(50%, red), color-stop(50%, transparent), to(transparent));
-  background: -webkit-linear-gradient(left, red, red 50%, transparent 50%, transparent);
-  background: linear-gradient(left, red, red 50%, transparent 50%, transparent);
-}
-.examples .example3 .container2, .examples .example4 .container2, .examples .example5 .container2, .examples .example6 .container2 {
-  clip: rect(0px, 2em, 4em, 0);
-}
-.examples .example3 .container2 .wedge, .examples .example4 .container2 .wedge, .examples .example5 .container2 .wedge, .examples .example6 .container2 .wedge {
-  -webkit-animation: rotate-bg-1 4s infinite linear;
-          animation: rotate-bg-1 4s infinite linear;
-  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, transparent), color-stop(50%, red), to(red));
-  background: -webkit-linear-gradient(left, transparent, transparent 50%, red 50%, red);
-  background: linear-gradient(left, transparent, transparent 50%, red 50%, red);
-}
-.examples .example4, .examples .example5, .examples .example6 {
-  top: 12em;
-}
-.examples .example4::after, .examples .example5::after, .examples .example6::after {
-  content: "";
-  background: #eee;
+  left: 0.5em;
+  top: 0.25em;
   border-radius: 50%;
   width: 3em;
-  height: 3em;
+}
+
+.card {
+  background: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(70%, #fff), color-stop(80%, #eee), to(#ccc));
+  background: -webkit-linear-gradient(top, #fff, #fff 70%, #eee 80%, #ccc 100%);
+  background: linear-gradient(top, #fff, #fff 70%, #eee 80%, #ccc 100%);
+  border-radius: 0.25em;
+  position: absolute;
+  height: 16em;
+  width: 20em;
+  left: -webkit-calc(50% - 10em);
+  left: calc(50% - 10em);
+  top: -webkit-calc(50% - 8em);
+  top: calc(50% - 8em);
+  -webkit-transition: all 0.4s 0.4s cubic-bezier(0.5, 0.2, 0.43, 1.33);
+          transition: all 0.4s 0.4s cubic-bezier(0.5, 0.2, 0.43, 1.33);
+  -webkit-box-shadow: 0 0 8em rgba(150, 100, 100, 0.2);
+          box-shadow: 0 0 8em rgba(150, 100, 100, 0.2);
+}
+.card.show .headshot img {
+  opacity: 1;
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+}
+.card.show .details {
+  visibility: visible;
+}
+
+.details {
+  position: absolute;
+  top: -4em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-align: center;
+  visibility: hidden;
+  width: 20em;
+}
+.details h2 {
+  color: #333;
+  margin: 0;
+  font-weight: bold;
+}
+.details p {
+  color: #666;
+  font-size: 1em;
+  font-weight: 200;
+  line-height: 1.5;
+  margin: 1em 2em 2em;
+}
+
+.headshot img {
+  border: 0.5em solid #fff;
+  border-radius: 50%;
+  display: block;
+  opacity: 0;
+  margin: 0 auto 1em;
+  width: 100px;
+  height: 100px;
+  -webkit-transform: rotateX(-90deg);
+          transform: rotateX(-90deg);
+  -webkit-transition: all 0.4s 0.2s cubic-bezier(0.5, 0.2, 0.43, 1.33);
+          transition: all 0.4s 0.2s cubic-bezier(0.5, 0.2, 0.43, 1.33);
+}
+
+.social-icons ul {
+  background: #1a8;
+  border-radius: 0.25em;
+  margin: 1em -1em;
+  padding: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-display: column;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+}
+.social-icons ul li {
+  display: inline-block;
+  font-size: 2em;
+  padding: 0.5em 1em;
+  width: 33%;
+}
+.social-icons ul a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.close {
+  color: #aaa;
+  cursor: pointer;
   position: absolute;
   top: 0.5em;
-  left: 0.5em;
-}
-.examples .example5, .examples .example6 {
-  top: 18em;
-}
-.examples .example5 .marker, .examples .example6 .marker {
-  width: 0.5em;
-  height: 0.5em;
-  background: green;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: -webkit-calc(50% - 0.25em);
-  left: calc(50% - 0.25em);
-}
-.examples .example5 .end, .examples .example6 .end {
-  -webkit-animation: rotate-marker 4s infinite linear;
-          animation: rotate-marker 4s infinite linear;
-  -webkit-transform-origin: 50% 2em;
-      -ms-transform-origin: 50% 2em;
-          transform-origin: 50% 2em;
-}
-.examples .example6 {
-  top: 24em;
-}
-.examples .example6 .marker {
-  background: red;
-  -webkit-animation: rotate-marker-staged 4s infinite linear;
-          animation: rotate-marker-staged 4s infinite linear;
-}
-.examples .example6 .container1 .wedge {
-  -webkit-animation: rotate-bg-staged-1 4s infinite linear;
-          animation: rotate-bg-staged-1 4s infinite linear;
-}
-
-@-webkit-keyframes rotate-bg {
-  100% {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-  }
-}
-
-@keyframes rotate-bg {
-  100% {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-  }
-}
-@-webkit-keyframes rotate-bg-1 {
-  0%, 50% {
-    -webkit-transform: none;
-            transform: none;
-  }
-  100% {
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-  }
-}
-@keyframes rotate-bg-1 {
-  0%, 50% {
-    -webkit-transform: none;
-            transform: none;
-  }
-  100% {
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-  }
-}
-@-webkit-keyframes rotate-bg-2 {
-  50%, 100% {
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-  }
-}
-@keyframes rotate-bg-2 {
-  50%, 100% {
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-  }
-}
-@-webkit-keyframes rotate-marker {
-  100% {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-  }
-}
-@keyframes rotate-marker {
-  100% {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-  }
-}
-@-webkit-keyframes rotate-marker-staged {
-  0% {
-    -webkit-animation-timing-function: cubic-bezier(0, 0.37, 0.5, 0.51);
-            animation-timing-function: cubic-bezier(0, 0.37, 0.5, 0.51);
-  }
-  50% {
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-  }
-}
-@keyframes rotate-marker-staged {
-  0% {
-    -webkit-animation-timing-function: cubic-bezier(0, 0.37, 0.5, 0.51);
-            animation-timing-function: cubic-bezier(0, 0.37, 0.5, 0.51);
-  }
-  50% {
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-  }
-}
-@-webkit-keyframes rotate-bg-staged-1 {
-  0% {
-    -webkit-animation-timing-function: cubic-bezier(0, 0.37, 0.5, 0.51);
-            animation-timing-function: cubic-bezier(0, 0.37, 0.5, 0.51);
-  }
-  50%, 100% {
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-  }
-}
-@keyframes rotate-bg-staged-1 {
-  0% {
-    -webkit-animation-timing-function: cubic-bezier(0, 0.37, 0.5, 0.51);
-            animation-timing-function: cubic-bezier(0, 0.37, 0.5, 0.51);
-  }
-  50%, 100% {
-    -webkit-transform: rotateZ(180deg);
-            transform: rotateZ(180deg);
-  }
+  right: 0.5em;
+  width: 1em;
+  height: 1em;
+  z-index: 10;
 }

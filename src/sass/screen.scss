@@ -1,565 +1,142 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* fontawesome */
+[class*="entypo-"]:before {
+  font-family: 'Entypo', sans-serif;
+}
+
 body {
   margin: 0;
-  background: #f2f2f2;
-  font-family: "San Francisco Display UltraLight", "Open Sans", Helvetica, Arial, Serif;
-  font-weight: UltraLight;
+  background: #ffe;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
   color: #333;
   text-align: center;
 }
 
-.watch {
-  background: url(../images/watchbg.jpg);
-  background-size: 100%;
-  width: 195px;
-  width: 390px;
-  height: 216px;
-  height: 432px;
-  font-size: 32px;
+button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+  transition: all 0.2s 0.75s ease-out;
+  font-size: 18px;
+  background: #fff;
+  border: 0.5em solid #fff;
+  border-radius: 4em;
+  color: darken(#58e1ac, 20%);
+  line-height: 1.5;
+  padding: 1em 1em 1em 4em;
 
-@keyframes show-title {
-  0% {
-    transform: translateY(0.25em);
+  &.show {
     opacity: 0;
+    transform: translateY(0.5em);
+    transition: all 0.2s ease-out;
   }
-  10%, 95% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0.25em);
-    opacity: 0;
-  }
-}
 
-@keyframes show-dials {
-  0%, 8% {
-    opacity: 0;
-    transform: translateY(0.25em);
-  }
-  15%, 93% {
-    opacity: 1;
-    transform: none;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(0.25em);
+  img {
+    position: absolute;
+    left: 0.5em;
+    top: 0.25em;
+
+    border-radius: 50%;
+    width: 3em;
   }
 }
 
-.screen {
-  width: 59.2%;
-  height: 74%;
+.card {
+  background: #fff;
+  background: linear-gradient(top, #fff, #fff 70%, #eee 80%, #ccc 100%);
+  border-radius: 0.25em;
   position: absolute;
-  left: 18%;
-  top: 13%;
+  height: 16em;
+  width: 20em;
+  left: calc(50% - 10em);
+  top: calc(50% - 8em);
+  transition: all 0.4s 0.4s cubic-bezier(.5,.2,.43,1.33);
+  box-shadow: 0 0 8em rgba(150,100,100,0.2);
 
-  .title, .time {
-    animation: show-title 5s infinite ease-out;
-    color: #fff;
-    font-size: 0.75em;
-    position: absolute;
-    top: 0;
-    left: 0;
-    letter-spacing: 0.1em;
-  }
+  &.show {
 
-  .time {
-    animation-delay: 0.1s;
-    color: #aaa;
-    right: 0;
-    left: auto;
-  }
-
-  .dials {
-    animation: show-dials 5s infinite ease-out;
-    width: 7.5em;
-    height: 7.5em;
-    border-radius: 50%;
-    position: absolute;
-    overflow: hidden;
-    top: 1.375em;
-    left: 0;
-  }
-
-  /**** DIAL 1 ****/
-  .dial.move {
-    position: absolute;
-    width: 7.5em;
-    height: 7.5em;
-
-    &::after {
-      content: "";
-      background: #000;
-      border-radius: 50%;
-      width: 5.75em;
-      height: 5.75em;
-      position: absolute;
-      top: 0.9em;
-      left: 0.9em;
-    }
-
-    .container {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-    .wedge {
-      animation: rotate-bg-dial-1-1 5s 0.2s linear infinite;
-      border-radius: 50%;
-      width: 100%;
-      height: 100%;
-    }
-    .container1 {
-      clip: rect(0px, 7.5em, 7.5em, 3.75em);
-
-      .wedge {
-        background: linear-gradient(left, #f8202b, #f8202b 50%, transparent 50%, transparent);
+    .headshot {
+      img {
+        opacity: 1;
+        transform: rotateX(0);
       }
     }
-    .container2 {
-      clip: rect(0px, 3.75em, 7.5em, 0);
-
-      .wedge {
-        animation: rotate-bg-dial-1-2 5s 0.2s linear infinite;
-        background: linear-gradient(left, transparent, transparent 50%, #f8202b 50%, #f8202b);
-      }
-    }
-
-    .marker {
-      width: 0.93em;
-      height: 0.93em;
-      background: #f8202b;
-      border-radius: 50%;
-      position: absolute;
-      top: 0;
-      left: 3.285em;
-    }
-    .end {
-      animation: rotate-marker-dial-1 5s 0.2s linear infinite;
-      transform-origin: 50% 3.75em;
+    .details {
+      visibility: visible;
     }
   }
 
-  /**** DIAL 2 ****/
-  .dial.exercise {
-    position: absolute;
-    width: 5.525em;
-    height: 5.525em;
-    top: 1em;
-    left: 1em;
-
-    &::after {
-      content: "";
-      background: #000;
-      border-radius: 50%;
-      width: 3.75em;
-      height: 3.75em;
-      position: absolute;
-      top: 0.925em;
-      left: 0.925em;
-    }
-
-    .container {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-    .wedge {
-      border-radius: 50%;
-      width: 100%;
-      height: 100%;
-    }
-    .container1 {
-      clip: rect(0px, 5.75em, 5.5em, 2.8em);
-
-      .wedge {
-        animation: rotate-bg-dial-2-1 5s .5s linear infinite;
-        background: linear-gradient(left, #9cfb46, #9cfb46 50%, transparent 50%, transparent);
-      }
-    }
-    .container2 {
-      display: none;
-    }
-
-    .marker {
-      width: 0.93em;
-      height: 0.93em;
-      background: #9cfb46;
-      border-radius: 50%;
-      position: absolute;
-      top: 0;
-      left: calc(50% - 0.4em);
-    }
-    .end {
-      animation: rotate-marker-dial-2 5s .5s linear infinite;
-      transform-origin: 50% 2.75em;
-    }
-  }
-
-  /**** DIAL 3 ****/
-  .dial.stand {
-    position: absolute;
-    width: 3.5em;
-    height: 3.5em;
-    top: 2.05em;
-    left: 2.05em;
-
-    &::after {
-      content: "";
-      background: #000;
-      border-radius: 50%;
-      width: 1.75em;
-      height: 1.75em;
-      position: absolute;
-      top: 0.875em;
-      left: 0.875em;
-    }
-
-    .container {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      overflow: hidden;
-    }
-    .wedge {
-      border-radius: 50%;
-      width: 100%;
-      height: 100%;
-    }
-    .container1 {
-      clip: rect(0px, 3.75em, 3.75em, 1.75em);
-
-      .wedge {
-        animation: rotate-bg-dial-3-1 5s 0.5s linear infinite;
-        background: linear-gradient(left, #32cbd4, #32cbd4 50%, transparent 50%, transparent);
-      }
-    }
-    .container2 {
-      display: none;
-    }
-
-    .marker {
-      width: 0.93em;
-      height: 0.93em;
-      background: #32cbd4;
-      border-radius: 50%;
-      position: absolute;
-      top: 0;
-      left: calc(50% - 0.4em);
-    }
-    .end {
-      animation: rotate-marker-dial-3 5s 0.5s linear infinite;
-      transform-origin: 50% 1.7em;
-    }
-  }
-
-  .dial-background {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 50%;
-
-    &.one {
-      background: #400818;
-
-    }
-
-    &.two {
-      background: #2d400c;
-    }
-
-    &.three {
-      background: #163d3b;
-    }
-  }
 }
 
-.pips {
-  animation: show-dials 5s 0.1s infinite ease-out;
+.details {
   position: absolute;
-  bottom: 0;
-  left: calc(50% - 1em);
-  width: 2em;
+  top: -4em;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  visibility: hidden;
+  width: 20em;
 
-  div {
-    width: 0.25em;
-    height: 0.25em;
-    background-color: #353535;
-    border-radius: 50%;
+  h2 {
+    color: #333;
+    margin: 0;
+    font-weight: bold;
+  }
+  p {
+    color: #666;
+    font-size: 1em;
+    font-weight: 200;
+    line-height: 1.5;
+    margin: 1em 2em 2em;
+  }
+
+}
+
+.headshot img {
+  border: 0.5em solid #fff;
+  border-radius: 50%;
+  display: block;
+  opacity: 0;
+  margin: 0 auto 1em;
+  width: 100px;
+  height: 100px;
+  transform: rotateX(-90deg);
+  transition: all 0.4s 0.2s cubic-bezier(.5,.2,.43,1.33);
+}
+
+.social-icons ul {
+  background: #1a8;
+  border-radius: 0.25em;
+  margin: 1em -1em;
+  padding: 0;
+  display: flex;
+  flex-display: column;
+  flex-wrap: nowrap;
+
+  li {
     display: inline-block;
-    margin: 0 0.02em;
+    font-size: 2em;
+    padding: 0.5em 1em;
+    width: 33%;
+  }
 
-    &:first-child {
-      background-color: #fff;
-    }
+  a {
+    color: #fff;
+    text-decoration: none;
   }
 }
 
-/** Animations **/
-
-@keyframes rotate-marker-dial-1 {
-  0%, 6% {
-    transform: none;
-  }
-  28%, 94% {
-    transform: rotateZ(220deg);
-  }
-  95%, 100% {
-    transform: none;
-  }
+.close {
+  color: #aaa;
+  cursor: pointer;
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  width: 1em;
+  height: 1em;
+  z-index: 10;
 }
-
-@keyframes rotate-bg-dial-1-1 {
-  0%, 6% {
-    transform: none;
-  }
-  24%, 94% {
-    transform: rotateZ(180deg);
-  }
-  95%, 100% {
-    transform: none;
-  }
-}
-
-@keyframes rotate-bg-dial-1-2 {
-  24% {
-    transform: none;
-  }
-  28%, 94% {
-    transform: rotateZ(40deg);
-  }
-  95%, 100% {
-    transform: none;
-  }
-}
-
-@keyframes rotate-marker-dial-2 {
-  20%, 90% {
-    transform: rotateZ(160deg);
-  }
-  91%, 100% {
-    transform: none;
-  }
-}
-
-@keyframes rotate-bg-dial-2-1 {
-  20%, 90% {
-    transform: rotateZ(160deg);
-  }
-  91%, 100% {
-    transform: none;
-  }
-}
-
-@keyframes rotate-marker-dial-3 {
-  20%, 90% {
-    transform: rotateZ(90deg);
-  }
-  91%, 100% {
-    transform: none;
-  }
-}
-
-@keyframes rotate-bg-dial-3-1 {
-  20%, 90% {
-    transform: rotateZ(90deg);
-  }
-  91%, 100% {
-    transform: none;
-  }
-}
-
-
-
-
-
-
-
-
-.examples {
-  position: relative;
-  font-size: 32px;
-  display: none;
-
-  .example1 {
-    position: absolute;
-    width: 4em;
-    height: 4em;
-    top: 0;
-    clip: rect(0px, 4em, 4em, 2em);
-
-    .wedge {
-      animation: rotate-bg 4s infinite linear;
-      border-radius: 50%;
-      background: linear-gradient(left, red, red 50%, transparent 50%, transparent);
-      width: 4em;
-      height: 4em;
-    }
-  }
-
-  .example2 {
-    position: absolute;
-    width: 4em;
-    height: 4em;
-    top: 0;
-    left: 6em;
-    clip: rect(0px, 2em, 4em, 0);
-
-    .wedge {
-      animation: rotate-bg 4s infinite linear;
-      border-radius: 50%;
-      background: linear-gradient(left, transparent, transparent 50%, red 50%, red);
-      width: 4em;
-      height: 4em;
-    }
-  }
-
-  .example3, .example4, .example5, .example6 {
-    position: absolute;
-    width: 4em;
-    height: 4em;
-    top: 6em;
-    left: 0;
-
-    .container {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
-    .wedge {
-      animation: rotate-bg-2 4s infinite linear;
-      border-radius: 50%;
-      width: 4em;
-      height: 4em;
-    }
-    .container1 {
-      clip: rect(0px, 4em, 4em, 2em);
-
-      .wedge {
-        background: linear-gradient(left, red, red 50%, transparent 50%, transparent);
-      }
-    }
-    .container2 {
-      clip: rect(0px, 2em, 4em, 0);
-
-      .wedge {
-        animation: rotate-bg-1 4s infinite linear;
-        background: linear-gradient(left, transparent, transparent 50%, red 50%, red);
-      }
-    }
-  }
-
-  .example4, .example5, .example6 {
-    top: 12em;
-
-    &::after {
-      content: "";
-      background: #eee;
-      border-radius: 50%;
-      width: 3em;
-      height: 3em;
-      position: absolute;
-      top: 0.5em;
-      left: 0.5em;
-    }
-  }
-
-  .example5, .example6 {
-    top: 18em;
-
-    .marker {
-      width: 0.5em;
-      height: 0.5em;
-      background: green;
-      border-radius: 50%;
-      position: absolute;
-      top: 0;
-      left: calc(50% - 0.25em);
-    }
-    .end {
-      animation: rotate-marker 4s infinite linear;
-      transform-origin: 50% 2em;
-    }
-  }
-
-  .example6 {
-    top: 24em;
-
-    .marker {
-      background: red;
-      animation: rotate-marker-staged 4s infinite linear;
-    }
-    .container1 {
-      .wedge {
-        animation: rotate-bg-staged-1 4s infinite linear;
-      }
-    }
-  }
-
-}
-
-@keyframes rotate-bg {
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
-
-@keyframes rotate-bg-1 {
-  0%, 50% {
-    transform: none;
-  }
-  100% {
-    transform: rotateZ(180deg);
-  }
-}
-
-@keyframes rotate-bg-2 {
-  50%, 100% {
-    transform: rotateZ(180deg);
-  }
-}
-
-@keyframes rotate-marker {
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
-
-@keyframes rotate-marker-staged {
-  0% {
-    animation-timing-function: cubic-bezier(0,.37,.5,.51);
-  }
-  50% {
-    transform: rotateZ(180deg);
-  }
-  100% {
-    transform: rotateZ(360deg);
-  }
-}
-
-
-@keyframes rotate-bg-staged-1 {
-  0% {
-    animation-timing-function: cubic-bezier(0,.37,.5,.51);
-  }
-  50%, 100% {
-    transform: rotateZ(180deg);
-  }
-}
-
 
