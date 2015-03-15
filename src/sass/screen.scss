@@ -5,9 +5,11 @@
   font-family: 'Entypo', sans-serif;
 }
 
+$highlight: #1fa756;
+
 body {
   margin: 0;
-  background: #ffe;
+  background: #d6eaf2;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   color: #333;
@@ -22,17 +24,11 @@ button {
   transition: all 0.2s 0.75s ease-out;
   font-size: 18px;
   background: #fff;
-  border: 0.5em solid #fff;
+  border: 0.25em solid $highlight;
   border-radius: 4em;
-  color: darken(#58e1ac, 20%);
+  color: $highlight;
   line-height: 1.5;
   padding: 1em 1em 1em 4em;
-
-  &.show {
-    opacity: 0;
-    transform: translateY(0.5em);
-    transition: all 0.2s ease-out;
-  }
 
   img {
     position: absolute;
@@ -45,18 +41,16 @@ button {
 }
 
 .card {
-  background: #fff;
-  background: linear-gradient(top, #fff, #fff 70%, #eee 80%, #ccc 100%);
-  border-radius: 0.25em;
+  display: none;
   position: absolute;
   height: 16em;
   width: 20em;
   left: calc(50% - 10em);
-  top: calc(50% - 8em);
+  bottom: calc(50% - 8em);
   transition: all 0.4s 0.4s cubic-bezier(.5,.2,.43,1.33);
-  box-shadow: 0 0 8em rgba(150,100,100,0.2);
 
   &.show {
+    display: block;
 
     .headshot {
       img {
@@ -73,16 +67,18 @@ button {
 
 .details {
   position: absolute;
-  top: -4em;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 2.5em;
+  background: #fff;
+  border-radius: 0.25em;
+  height: 13.5em;
+  overflow: hidden;
   text-align: center;
   visibility: hidden;
   width: 20em;
 
   h2 {
     color: #333;
-    margin: 0;
+    margin: 3em 0 0;
     font-weight: bold;
   }
   p {
@@ -90,7 +86,7 @@ button {
     font-size: 1em;
     font-weight: 200;
     line-height: 1.5;
-    margin: 1em 2em 2em;
+    margin: 0.75em 2em 2em;
   }
 
 }
@@ -100,26 +96,30 @@ button {
   border-radius: 50%;
   display: block;
   opacity: 0;
-  margin: 0 auto 1em;
-  width: 100px;
-  height: 100px;
-  transform: rotateX(-90deg);
-  transition: all 0.4s 0.2s cubic-bezier(.5,.2,.43,1.33);
+  margin: -3em auto 0.5em;
+  width: 6em;
+  height: 6em;
 }
 
-.social-icons ul {
-  background: #1a8;
+.social-icons {
+  background: $highlight;
   border-radius: 0.25em;
-  margin: 1em -1em;
-  padding: 0;
-  display: flex;
-  flex-display: column;
-  flex-wrap: nowrap;
+  position: absolute;
+  left: -1em;
+  right: -1em;
+  top: 13em;
+
+  ul {
+    padding: 0;
+    display: flex;
+    flex-display: column;
+    flex-wrap: nowrap;
+  }
 
   li {
     display: inline-block;
     font-size: 2em;
-    padding: 0.5em 1em;
+    padding: 0 1em;
     width: 33%;
   }
 
